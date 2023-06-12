@@ -1,0 +1,6 @@
+[console_scripts]
+mpc_ctrl = ts_controllers.mpc_ctrl:main
+path_publisher = ts_controllers.path:main
+pure_pursuit_ctrl = ts_controllers.pure_pursuit:main
+stanley_ctrl = ts_controllers.stanley:main
+

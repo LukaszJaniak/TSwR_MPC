@@ -1,0 +1,25 @@
+running egg_info
+writing build/ts_controllers/ts_controllers.egg-info/PKG-INFO
+writing dependency_links to build/ts_controllers/ts_controllers.egg-info/dependency_links.txt
+writing entry points to build/ts_controllers/ts_controllers.egg-info/entry_points.txt
+writing requirements to build/ts_controllers/ts_controllers.egg-info/requires.txt
+writing top-level names to build/ts_controllers/ts_controllers.egg-info/top_level.txt
+reading manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'
+writing manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+running install_data
+copying resource/path.csv -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ts_controllers
+running install_egg_info
+removing '/home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers-0.0.0-py3.10.egg-info' (and everything under it)
+Copying build/ts_controllers/ts_controllers.egg-info to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers-0.0.0-py3.10.egg-info
+running install_scripts
+Installing mpc_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+Installing path_publisher script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+Installing pure_pursuit_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+Installing stanley_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+writing list of installed files to '/home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log'

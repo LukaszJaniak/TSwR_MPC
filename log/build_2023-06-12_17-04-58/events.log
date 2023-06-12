@@ -1,0 +1,7 @@
+[0.000000] (-) TimerEvent: {}
+[0.000482] (ts_controllers) JobQueued: {'identifier': 'ts_controllers', 'dependencies': OrderedDict()}
+[0.000558] (ts_controllers) JobStarted: {'identifier': 'ts_controllers'}
+[0.099485] (-) TimerEvent: {}
+[0.199805] (-) TimerEvent: {}
+[0.222033] (ts_controllers) JobEnded: {'identifier': 'ts_controllers', 'rc': 0}
+[0.223178] (-) EventReactorShutdown: {}

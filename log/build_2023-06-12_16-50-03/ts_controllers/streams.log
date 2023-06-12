@@ -1,0 +1,27 @@
+[1.130s] Invoking command in '/home/lukasz/autoware/ts_controllers': PYTHONPATH=/home/lukasz/autoware/ts_controllers/build/ts_controllers/prefix_override:/home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/ts_controllers build --build-base /home/lukasz/autoware/ts_controllers/build/ts_controllers/build install --record /home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log --single-version-externally-managed
+[1.513s] running egg_info
+[1.514s] writing build/ts_controllers/ts_controllers.egg-info/PKG-INFO
+[1.515s] writing dependency_links to build/ts_controllers/ts_controllers.egg-info/dependency_links.txt
+[1.515s] writing entry points to build/ts_controllers/ts_controllers.egg-info/entry_points.txt
+[1.515s] writing requirements to build/ts_controllers/ts_controllers.egg-info/requires.txt
+[1.515s] writing top-level names to build/ts_controllers/ts_controllers.egg-info/top_level.txt
+[1.518s] reading manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'
+[1.520s] writing manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'
+[1.521s] running build
+[1.521s] running build_py
+[1.521s] running install
+[1.522s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.522s]   warnings.warn(
+[1.522s] running install_lib
+[1.524s] running install_data
+[1.525s] copying resource/path.csv -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ts_controllers
+[1.526s] running install_egg_info
+[1.529s] removing '/home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers-0.0.0-py3.10.egg-info' (and everything under it)
+[1.529s] Copying build/ts_controllers/ts_controllers.egg-info to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers-0.0.0-py3.10.egg-info
+[1.530s] running install_scripts
+[1.560s] Installing mpc_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.560s] Installing path_publisher script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.561s] Installing pure_pursuit_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.561s] Installing stanley_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.561s] writing list of installed files to '/home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log'
+[1.596s] Invoked command in '/home/lukasz/autoware/ts_controllers' returned '0': PYTHONPATH=/home/lukasz/autoware/ts_controllers/build/ts_controllers/prefix_override:/home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/ts_controllers build --build-base /home/lukasz/autoware/ts_controllers/build/ts_controllers/build install --record /home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log --single-version-externally-managed

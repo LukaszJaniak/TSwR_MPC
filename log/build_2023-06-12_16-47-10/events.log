@@ -1,0 +1,70 @@
+[0.000000] (-) TimerEvent: {}
+[0.000357] (ts_controllers) JobQueued: {'identifier': 'ts_controllers', 'dependencies': OrderedDict()}
+[0.000661] (ts_controllers) JobStarted: {'identifier': 'ts_controllers'}
+[0.099657] (-) TimerEvent: {}
+[0.199902] (-) TimerEvent: {}
+[0.300150] (-) TimerEvent: {}
+[0.400410] (-) TimerEvent: {}
+[0.500709] (-) TimerEvent: {}
+[0.601129] (-) TimerEvent: {}
+[0.701468] (-) TimerEvent: {}
+[0.801716] (-) TimerEvent: {}
+[0.901992] (-) TimerEvent: {}
+[0.973809] (ts_controllers) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', 'build/ts_controllers', 'build', '--build-base', '/home/lukasz/autoware/ts_controllers/build/ts_controllers/build', 'install', '--record', '/home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log', '--single-version-externally-managed'], 'cwd': '/home/lukasz/autoware/ts_controllers', 'env': {'USER': 'lukasz', 'HOSTNAME': 'lukasz-GP72M-7REX', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/lukasz', 'OLDPWD': '/home/lukasz/autoware', 'ROS_PYTHON_VERSION': '3', 'LC_CTYPE': 'C.UTF-8', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'VEHICLE_ID': 'default', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XAUTHORITY': '/tmp/.dockerk5bh13vd.xauth', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'PWD': '/home/lukasz/autoware/ts_controllers/build/ts_controllers', 'PYTHONPATH': '/home/lukasz/autoware/ts_controllers/build/ts_controllers/prefix_override:/home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[1.002086] (-) TimerEvent: {}
+[1.102377] (-) TimerEvent: {}
+[1.202729] (-) TimerEvent: {}
+[1.303044] (-) TimerEvent: {}
+[1.360484] (ts_controllers) StdoutLine: {'line': b'running egg_info\n'}
+[1.361368] (ts_controllers) StdoutLine: {'line': b'creating build/ts_controllers/ts_controllers.egg-info\n'}
+[1.361720] (ts_controllers) StdoutLine: {'line': b'writing build/ts_controllers/ts_controllers.egg-info/PKG-INFO\n'}
+[1.362026] (ts_controllers) StdoutLine: {'line': b'writing dependency_links to build/ts_controllers/ts_controllers.egg-info/dependency_links.txt\n'}
+[1.362211] (ts_controllers) StdoutLine: {'line': b'writing entry points to build/ts_controllers/ts_controllers.egg-info/entry_points.txt\n'}
+[1.362426] (ts_controllers) StdoutLine: {'line': b'writing requirements to build/ts_controllers/ts_controllers.egg-info/requires.txt\n'}
+[1.362632] (ts_controllers) StdoutLine: {'line': b'writing top-level names to build/ts_controllers/ts_controllers.egg-info/top_level.txt\n'}
+[1.362753] (ts_controllers) StdoutLine: {'line': b"writing manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'\n"}
+[1.364795] (ts_controllers) StdoutLine: {'line': b"reading manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'\n"}
+[1.365515] (ts_controllers) StdoutLine: {'line': b"writing manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'\n"}
+[1.365704] (ts_controllers) StdoutLine: {'line': b'running build\n'}
+[1.365818] (ts_controllers) StdoutLine: {'line': b'running build_py\n'}
+[1.366049] (ts_controllers) StdoutLine: {'line': b'creating /home/lukasz/autoware/ts_controllers/build/ts_controllers/build\n'}
+[1.366254] (ts_controllers) StdoutLine: {'line': b'creating /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib\n'}
+[1.366371] (ts_controllers) StdoutLine: {'line': b'creating /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers\n'}
+[1.366483] (ts_controllers) StdoutLine: {'line': b'copying ts_controllers/__init__.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers\n'}
+[1.366650] (ts_controllers) StdoutLine: {'line': b'copying ts_controllers/path.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers\n'}
+[1.366853] (ts_controllers) StdoutLine: {'line': b'copying ts_controllers/pure_pursuit.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers\n'}
+[1.366966] (ts_controllers) StdoutLine: {'line': b'copying ts_controllers/mpc_ctrl.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers\n'}
+[1.367126] (ts_controllers) StdoutLine: {'line': b'copying ts_controllers/stanley.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers\n'}
+[1.367298] (ts_controllers) StdoutLine: {'line': b'running install\n'}
+[1.367395] (ts_controllers) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.367535] (ts_controllers) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.367707] (ts_controllers) StdoutLine: {'line': b'running install_lib\n'}
+[1.368475] (ts_controllers) StdoutLine: {'line': b'creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers\n'}
+[1.368657] (ts_controllers) StdoutLine: {'line': b'copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/__init__.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers\n'}
+[1.368820] (ts_controllers) StdoutLine: {'line': b'copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/path.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers\n'}
+[1.368970] (ts_controllers) StdoutLine: {'line': b'copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/pure_pursuit.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers\n'}
+[1.369101] (ts_controllers) StdoutLine: {'line': b'copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/mpc_ctrl.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers\n'}
+[1.369204] (ts_controllers) StdoutLine: {'line': b'copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/stanley.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers\n'}
+[1.369766] (ts_controllers) StdoutLine: {'line': b'byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/__init__.py to __init__.cpython-310.pyc\n'}
+[1.370116] (ts_controllers) StdoutLine: {'line': b'byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/path.py to path.cpython-310.pyc\n'}
+[1.371445] (ts_controllers) StdoutLine: {'line': b'byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/pure_pursuit.py to pure_pursuit.cpython-310.pyc\n'}
+[1.372883] (ts_controllers) StdoutLine: {'line': b'byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/mpc_ctrl.py to mpc_ctrl.cpython-310.pyc\n'}
+[1.375877] (ts_controllers) StdoutLine: {'line': b'byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/stanley.py to stanley.cpython-310.pyc\n'}
+[1.378123] (ts_controllers) StdoutLine: {'line': b'running install_data\n'}
+[1.379266] (ts_controllers) StdoutLine: {'line': b'creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index\n'}
+[1.379527] (ts_controllers) StdoutLine: {'line': b'creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index/resource_index\n'}
+[1.379693] (ts_controllers) StdoutLine: {'line': b'creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index/resource_index/packages\n'}
+[1.379827] (ts_controllers) StdoutLine: {'line': b'copying resource/ts_controllers -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index/resource_index/packages\n'}
+[1.379926] (ts_controllers) StdoutLine: {'line': b'copying package.xml -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ts_controllers\n'}
+[1.380031] (ts_controllers) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.381448] (ts_controllers) StdoutLine: {'line': b'Copying build/ts_controllers/ts_controllers.egg-info to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers-0.0.0-py3.10.egg-info\n'}
+[1.382493] (ts_controllers) StdoutLine: {'line': b'running install_scripts\n'}
+[1.403163] (-) TimerEvent: {}
+[1.407033] (ts_controllers) StdoutLine: {'line': b'Installing mpc_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers\n'}
+[1.407294] (ts_controllers) StdoutLine: {'line': b'Installing path_publisher script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers\n'}
+[1.407489] (ts_controllers) StdoutLine: {'line': b'Installing pure_pursuit_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers\n'}
+[1.407684] (ts_controllers) StdoutLine: {'line': b'Installing stanley_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers\n'}
+[1.408136] (ts_controllers) StdoutLine: {'line': b"writing list of installed files to '/home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log'\n"}
+[1.441633] (ts_controllers) CommandEnded: {'returncode': 0}
+[1.456793] (ts_controllers) JobEnded: {'identifier': 'ts_controllers', 'rc': 0}
+[1.457684] (-) EventReactorShutdown: {}

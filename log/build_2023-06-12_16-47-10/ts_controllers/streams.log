@@ -1,0 +1,51 @@
+[0.975s] Invoking command in '/home/lukasz/autoware/ts_controllers': PYTHONPATH=/home/lukasz/autoware/ts_controllers/build/ts_controllers/prefix_override:/home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/ts_controllers build --build-base /home/lukasz/autoware/ts_controllers/build/ts_controllers/build install --record /home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log --single-version-externally-managed
+[1.359s] running egg_info
+[1.360s] creating build/ts_controllers/ts_controllers.egg-info
+[1.360s] writing build/ts_controllers/ts_controllers.egg-info/PKG-INFO
+[1.360s] writing dependency_links to build/ts_controllers/ts_controllers.egg-info/dependency_links.txt
+[1.360s] writing entry points to build/ts_controllers/ts_controllers.egg-info/entry_points.txt
+[1.361s] writing requirements to build/ts_controllers/ts_controllers.egg-info/requires.txt
+[1.361s] writing top-level names to build/ts_controllers/ts_controllers.egg-info/top_level.txt
+[1.361s] writing manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'
+[1.363s] reading manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'
+[1.364s] writing manifest file 'build/ts_controllers/ts_controllers.egg-info/SOURCES.txt'
+[1.364s] running build
+[1.364s] running build_py
+[1.364s] creating /home/lukasz/autoware/ts_controllers/build/ts_controllers/build
+[1.364s] creating /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib
+[1.365s] creating /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers
+[1.365s] copying ts_controllers/__init__.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers
+[1.365s] copying ts_controllers/path.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers
+[1.365s] copying ts_controllers/pure_pursuit.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers
+[1.365s] copying ts_controllers/mpc_ctrl.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers
+[1.365s] copying ts_controllers/stanley.py -> /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers
+[1.366s] running install
+[1.366s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.366s]   warnings.warn(
+[1.366s] running install_lib
+[1.367s] creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers
+[1.367s] copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/__init__.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers
+[1.367s] copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/path.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers
+[1.367s] copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/pure_pursuit.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers
+[1.367s] copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/mpc_ctrl.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers
+[1.367s] copying /home/lukasz/autoware/ts_controllers/build/ts_controllers/build/lib/ts_controllers/stanley.py -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers
+[1.368s] byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/__init__.py to __init__.cpython-310.pyc
+[1.368s] byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/path.py to path.cpython-310.pyc
+[1.370s] byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/pure_pursuit.py to pure_pursuit.cpython-310.pyc
+[1.371s] byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/mpc_ctrl.py to mpc_ctrl.cpython-310.pyc
+[1.374s] byte-compiling /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers/stanley.py to stanley.cpython-310.pyc
+[1.376s] running install_data
+[1.378s] creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index
+[1.378s] creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index/resource_index
+[1.378s] creating /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index/resource_index/packages
+[1.378s] copying resource/ts_controllers -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ament_index/resource_index/packages
+[1.378s] copying package.xml -> /home/lukasz/autoware/ts_controllers/install/ts_controllers/share/ts_controllers
+[1.378s] running install_egg_info
+[1.380s] Copying build/ts_controllers/ts_controllers.egg-info to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages/ts_controllers-0.0.0-py3.10.egg-info
+[1.381s] running install_scripts
+[1.405s] Installing mpc_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.406s] Installing path_publisher script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.406s] Installing pure_pursuit_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.406s] Installing stanley_ctrl script to /home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/ts_controllers
+[1.406s] writing list of installed files to '/home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log'
+[1.440s] Invoked command in '/home/lukasz/autoware/ts_controllers' returned '0': PYTHONPATH=/home/lukasz/autoware/ts_controllers/build/ts_controllers/prefix_override:/home/lukasz/autoware/ts_controllers/install/ts_controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/ts_controllers build --build-base /home/lukasz/autoware/ts_controllers/build/ts_controllers/build install --record /home/lukasz/autoware/ts_controllers/build/ts_controllers/install.log --single-version-externally-managed
