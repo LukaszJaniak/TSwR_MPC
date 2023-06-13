@@ -1,10 +1,10 @@
 import rclpy
 import numpy as np
 from rclpy.node import Node
+from scipy.linalg import inv
 from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
 from math import sin, cos, tan, atan2, sqrt
-from scipy.linalg import inv
 from tf_transformations import euler_from_quaternion
 from autoware_auto_control_msgs.msg import AckermannControlCommand
 from rclpy.qos import QoSProfile, ReliabilityPolicy, QoSDurabilityPolicy
@@ -20,7 +20,7 @@ class linear_MPC(Node):
         self.publish_control = self.create_publisher(AckermannControlCommand, '/control/command/control_cmd',
                                                        qos_policy)
         
-        ctrl_pub_period = 1/30#0.033#0.03  # okres Musi byc >1/26hz -> odswiezanie ground_truth/pose
+        ctrl_pub_period = 0.03  # okres Musi byc < 1/26hz -> odswiezanie ground_truth/pose
         self.control_publisher_timer = self.create_timer(ctrl_pub_period, self.periodic_publish_ctrl)
         
         update_period = 0.1 
@@ -35,12 +35,12 @@ class linear_MPC(Node):
         self.L = 0.45
         self.prev_vel_timestamp = self.get_clock().now()
 
-
+    #pobieranie aktualnej pozycji 
     def get_curr_pose(self, msg: PoseStamped):
         self.x, self.y= msg.pose.position.x, msg.pose.position.y
         self.qx, self.qy, self.qz, self.qw = msg.pose.orientation.x, msg.pose.orientation.y, msg.pose.orientation.z, msg.pose.orientation.w
     
-    
+    #Pobieranie trajektorii referencyjnej
     def get_ref_traj(self, msg: Path):
         self.ref_path = []
         for pose in msg.poses:
@@ -50,17 +50,16 @@ class linear_MPC(Node):
                                                           pose.pose.orientation.z,
                                                           pose.pose.orientation.w])[2]])
 
-
+    #Okresowe publikowanie danych
     def periodic_publish_ctrl(self):
         if not None in [self.delta, self.a]:
-            print("Kubica simulator: lekka kontra ", self.delta, " stopni i moidu na poziomie ", self.a)
             acc = AckermannControlCommand()
             acc.longitudinal.speed = 1.0
             acc.lateral.steering_tire_angle = self.delta
             acc.longitudinal.acceleration = self.a
             self.publish_control.publish(acc)
 
-
+    #Aktualizacja predkosci
     def get_curr_speed(self):
         if len(self.ref_path) > 1:
             dx = self.ref_path[1][0] - self.ref_path[0][0]
@@ -74,7 +73,7 @@ class linear_MPC(Node):
             self.ang_v = 0
         self.prev_vel_timestamp = self.get_clock().now()
 
-
+    #Obliczanie macierzy A, B, C
     def get_matrices_ABC(self, dt):
         A = np.eye(4)
         B = np.zeros((4, 2))
@@ -114,6 +113,7 @@ class linear_MPC(Node):
         if self.a > bound_accel:
             self.a = bound_accel
 
+    #Aktualizacja sterowania
     def update_control(self):
         if None in [self.x, self.y, self.qw, self.qx, self.qy, self.qz, self.ref_path]:
             return
@@ -122,21 +122,22 @@ class linear_MPC(Node):
         dt = 0.1
         bound_delta = 1.0
         bound_accel = 0.5
-
         self.get_curr_speed()
-        A, B, C = self.get_matrices_ABC(dt)
-        Q = np.diag([1.0, 1.0, 0.5, 0.5]) # waga stanu
-        R = np.diag([7500, 0.01])  # R waga sygnalu wejsciowego
+        A, B, _ = self.get_matrices_ABC(dt)
+        R = np.diag([7500, 0.01])  
+        Q = np.diag([1.0, 1.0, 0.5, 0.5]) 
         P = Q
         iter = 170
         eps = 0.01
-
+        #Optymalizacja Dyskretnym algebraicznym równaniem Riccatiego 
         for _ in range(iter):
             Pn = Q + A.transpose() @ P @ A - A.transpose() @ P @ B @ inv(R + B.transpose() @ B) @ B.transpose() @ P @ A
             if (abs(Pn - P)).max() < eps:
                 break
-            P = Pn
+            else:
+                P = Pn
         K = -inv(R + B.transpose() @ P @ B) @ B.transpose() @ P @ A
+        # Wyznaczanie błędu i wartośći zadanych
         cp_x, cp_y, cp_yaw = self.ref_path[0]
         e = np.array([self.x - cp_x, self.y - cp_y, self.v, self.yaw - cp_yaw])
         a, delta = K @ e
@@ -147,8 +148,6 @@ class linear_MPC(Node):
         self.check_bounds(bound_delta, bound_accel)
         
         
-
-
 def main(args=None):
     rclpy.init(args=args)
     MPC = linear_MPC()
@@ -159,90 +158,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
-
-#Safe space 
-# Calculate P cost-to-go matrix for DARE
-        # Q = np.diag([1, 1, 0.5, 0.5]) # Q - weights on the state
-        # R = np.diag([5000, 0.01])  # R - weights on control input. Large R if there is a limit on control output signal
-        # P = Q
-        # maxiter = 150
-        # eps = 0.01
-
-        # for i in range(maxiter):
-        #     Pn = Q + A.T @ P @ A - A.T @ P @ B @ inv(R + B.T @ B) @ B.T @ P @ A
-        #     if (abs(Pn - P)).max() < eps:
-        #         break
-        #     P = Pn
-
-        # # Calculate feedback gain for DARE
-        # K = -inv(R + B.T @ P @ B) @ B.T @ P @ A
-        # x_error = np.array([self.x - self.ref_path[0][0],
-        #                     self.y - self.ref_path[0][1],
-        #                     self.v,
-        #                     self.yaw - self.ref_path[0][2]])
-
-        # u_optimal = K @ x_error
-        # ##########Co tam się dzieje ^^^
-
-        # if self.delta is not None:
-        #     # self.soft_turn(u_optimal[1], 0.3) 
-        #     self.delta = u_optimal[1]
-        # else:
-        #     self.delta = u_optimal[1]
-        # self.a = -u_optimal[0]
-
-
-
-    # def get_constraints(self, A, B, C):
-    #     z = cp.Variable((4, len(self.ref_path + 1)))
-    #     u = cp.Variable((2, len(self.ref_path)))
-
-    #     constraints += [z[:, i+1] == A @ z[:, i] + B @ u[:, i] + C.flatten()]
-
-    #         # Velocity limits
-    #         constraints += [z[2, i] <= self.v_max]
-    #         constraints += [z[2, i] >= self.v_min]
-
-    #         # Input limits
-    #         constraints += [self.a_min <= u[0, i]]
-    #         constraints += [u[0, i] <= self.a_max]
-    #         constraints += [u[1, i] <= self.max_steering_angle]
-    #         constraints += [u[1, i] >= -self.max_steering_angle]
-    #         # Rate of change of input limit
-    #         if i != 0:
-    #             constraints += [u[0, i] - u[0, i-1] <= self.a_rate_max]
-    #             constraints += [u[0, i] - u[0, i-1] >= -self.a_rate_max]
-    #             constraints += [u[1, i] - u[1, i-1] <= self.steer_rate_max * dt]
-    #             constraints += [u[1, i] - u[1, i-1] >= -self.steer_rate_max * dt]
-    #             constraints += [(z[0, i + 1] - z_ref[0, i])*np.sin(z_ref[3,i]) <= self.dist]
-    #             constraints += [(z[0, i + 1] - z_ref[0, i])*np.sin(z_ref[3,i]) >= -self.dist]
-    #             constraints += [(z[1, i + 1] - z_ref[1, i])*np.cos(z_ref[3,i]) <= self.dist]
-    #             constraints += [(z[1, i + 1] - z_ref[1, i])*np.cos(z_ref[3,i]) >= -self.dist]
-    #     return constraints
-
-        ##########Smietnik
-        # #TODO
-        # Q = np.eye([2.5, 2.5, 1.1, 5.5])
-        # Qf = np.eye([2.5, 2.5, 1.5, 3.5])
-        # R = np.eye(2)
-        # z_ref = np.array([[self.x], [self.y], [self.v], [self.yaw]])
-        # z = cp.Variable((4, len(self.ref_path) + 1))
-        # u = cp.Variable((2, len(self.ref_path)))
-        # cost = 0
-        # #constraints
-        # # constraints = self.get_constraints()
-
-        # # Terminal cost
-        # cost += cp.quad_form(z_ref[:, -1] - z[:, -1], self.Qf)
-        # # qp = cp.Problem(cp.Minimize(cost), constraints)
-        # qp = cp.Problem(cp.Minimize(cost))
-        # qp.solve(solver=cp.ECOS, verbose=False)
-
-        # if qp.status == cp.OPTIMAL or qp.status == cp.OPTIMAL_INACCURATE:
-        #     print("if works")
-        #     self.a = np.array(u.value[0, :]).flatten()
-        #     self.delta = np.array(u.value[1, :]).flatten()
-        
-        
-        # self.prev_delta = self.delta

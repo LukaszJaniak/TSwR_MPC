@@ -130,12 +130,13 @@ class linear_MPC(Node):
         P = Q
         iter = 170
         eps = 0.01
-
+        #Równanie ricattiego
         for _ in range(iter):
             Pn = Q + A.transpose() @ P @ A - A.transpose() @ P @ B @ inv(R + B.transpose() @ B) @ B.transpose() @ P @ A
             if (abs(Pn - P)).max() < eps:
                 break
-            P = Pn
+            else:
+                P = Pn
         K = -inv(R + B.transpose() @ P @ B) @ B.transpose() @ P @ A
         cp_x, cp_y, cp_yaw = self.ref_path[0]
         e = np.array([self.x - cp_x, self.y - cp_y, self.v, self.yaw - cp_yaw])
